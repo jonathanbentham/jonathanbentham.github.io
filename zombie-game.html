@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Defend Grandad | Jonathan Bentham</title>
+  <meta name="description" content="Jonathan Bentham – Gameplay Programmer & Technical Designer in Unreal Engine (C++ & Blueprint). Shipped Ground Branch and TimeSplitters Rewind.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Defend Grandad | Jonathan Bentham">
+  <meta property="og:description" content="Jonathan Bentham – Gameplay Programmer & Technical Designer in Unreal Engine (C++ & Blueprint). Shipped Ground Branch and TimeSplitters Rewind.">
+  <meta property="og:url" content="https://jonathanbentham.github.io/zombie-game.html">
+  <meta property="og:image" content="https://jonathanbentham.github.io/assets/img/me-photo.jpeg">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css?v=3">
+</head>
+<body>
+  <header class="site-header">
+    <div class="inner">
+      <a class="brand" href="index.html">Jonathan Bentham</a>
+      <button class="nav-toggle" aria-controls="nav" aria-expanded="false">Menu</button>
+      <nav class="nav" id="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="assets/JonathanBenthamCV.pdf?v=3" target="_blank" rel="noopener">CV</a>
+        <a href="https://www.linkedin.com/in/JonathanBentham/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/jonathanbentham" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.youtube.com/@jonnb123" target="_blank" rel="noopener">YouTube</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-title">
+      <h1>Defend Grandad</h1>
+      <div class="btn-row center">
+        <a class="btn" href="https://www.youtube.com/watch?list=PLiHGHwhYuZtievc5R8XO9JrPTISwmpkp_&amp;v=awwnszliQCQ" target="_blank" rel="noopener">Devlogs</a>
+        <a class="btn" href="https://github.com/jonathanbentham/ZombieProject" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="https://drive.google.com/file/d/1EaRzj50EaL0-8gB-pqPHOMkKLmzMoWBH/view?usp=sharing" target="_blank" rel="noopener">Download</a>
+      </div>
+    </section>
+
+    <section class="section" id="overview">
+      <h2>Overview</h2>
+      <div class="feature">
+        <div class="media"><img class="shot" src="assets/img/defend-grandad.png" alt="Defend Grandad title screen" loading="lazy"></div>
+        <div>
+          <h3>General Overview</h3>
+          <p>Defend Grandad is a solo project with a focus on programming gameplay features. Other than the 3D models, animations and sound effects, I am creating everything.</p>
+          <div class="facts">
+            <div><h3>Used Languages/IDEs</h3><div class="tags"><span class="tag">Unreal Engine 5</span><span class="tag">C++</span><span class="tag">Rider</span></div></div>
+            <div><h3>Timeframe</h3><div class="tags"><span class="tag">~2 years (Work in progress)</span></div></div>
+          </div>
+        </div>
+      </div>
+      <h3 style="text-align:center">Main Systems Overview</h3>
+      <div class="tags" style="justify-content:center">
+        <a class="tag" href="#game-mode">Game Mode</a>
+        <a class="tag" href="#weapons">Weapon</a>
+        <a class="tag" href="#ai">AI</a>
+        <a class="tag" href="#dismemberment">Dismemberment</a>
+        <a class="tag" href="#shop">Shop</a>
+        <span class="tag">Perk</span>
+        <span class="tag">UI</span>
+        <span class="tag">Animation</span>
+      </div>
+    </section>
+    <section class="section" id="game-mode">
+      <h2>Game Mode</h2>
+      <div class="feature">
+        <div class="media"><video class="clip" muted loop playsinline preload="none" aria-label="Game mode" poster="assets/clips/game-mode-zombie.jpg" src="assets/clips/game-mode-zombie.mp4"></video></div>
+        <div><h3>Overview</h3><p>The <strong>aim of the game is to defend ‘Grandad’</strong> - he is unable to move. Zombies will try and kill him by default. However (if seen), the zombies will move to the player and try to kill them. <strong>If the player or ‘Grandad’ die, the game ends</strong>. This is a round-based game, with increasing numbers of zombies spawning each round. If you beat the final round (currently set to round 10), you win!</p></div>
+      </div>
+      <div class="feature">
+        <div class="media"><video class="clip" muted loop playsinline preload="none" aria-label="Exploring houses" poster="assets/clips/explore-houses.jpg" src="assets/clips/explore-houses.mp4"></video></div>
+        <div><h3>Explore</h3><p>There are houses scattered around the map with <strong>player upgrades</strong> (perks) and <strong>weapons</strong>. The player must choose wisely when to travel, as if unattended for too long, ‘Grandad’ will be killed.</p></div>
+      </div>
+      <div class="feature">
+        <div class="media"><video class="clip" muted loop playsinline preload="none" aria-label="Collecting points" poster="assets/clips/collect-points.jpg" src="assets/clips/collect-points.mp4"></video></div>
+        <div><h3>Earn Points</h3><p>Shoot zombies to <strong>earn points</strong> to spend on <strong>weapons</strong>, <strong>perks</strong> or at the <strong>shop</strong>. Points are displayed in the bottom left of the screen.</p></div>
+      </div>
+      <div class="feature">
+        <div class="media"><video class="clip" muted loop playsinline preload="none" aria-label="Health regeneration" poster="assets/clips/health-regeneration.jpg" src="assets/clips/health-regeneration.mp4"></video></div>
+        <div><h3>Player Health</h3><p>If a player is damaged by a zombie, this will drain the health bar on the bottom right of the User Interface (UI). If this drains completely the player dies. Once the player has less than 50% health a flickering blood overlay will appear on the screen. A <strong>health regeneration timer</strong> <strong>delegate</strong> is bound to a function and called if the player takes any damage and is cleared once at full health.</p></div>
+      </div>
+      <div class="feature">
+        <div class="media"><img class="shot" src="assets/img/zombie-spawn.png" alt="Zombie spawn code" loading="lazy"></div>
+        <div><h3>Zombie Spawning</h3><p>In order to get the zombies to spawn on the surface, a <strong>sphere trace</strong> was used. This worked much better than using a line-trace as it scans a much larger area in the trace. A line trace was not a viable option as it would often spawn the zombies under the map.</p></div>
+      </div>
+      <div class="feature">
+        <div class="media"><video class="clip" muted loop playsinline preload="none" aria-label="Boss zombies" poster="assets/clips/boss-zombies.jpg" src="assets/clips/boss-zombies.mp4"></video></div>
+        <div><h3>Boss Rounds</h3><p>There are <strong>fire-boss zombies</strong> that spawn once every five waves. These deal <strong>twice</strong> the amount of damage as regular zombies and use different sound effects. These will be improved in the future.</p></div>
+      </div>
+    </section>
+    <section class="section" id="weapons">
+      <h2>Weapon System</h2>
+      <div class="feature">
+        <div class="media"><video class="clip" muted loop playsinline preload="none" aria-label="Weapons" poster="assets/clips/weapons.jpg" src="assets/clips/weapons.mp4"></video></div>
+        <div><h3>Overview</h3><p>As it stands there are three weapons in the game:</p><ul><li>Pistol</li><li>Shotgun</li><li>Assault Rifle</li></ul></div>
+      </div>
+      <div class="feature">
+        <div class="media"><video class="clip" muted loop playsinline preload="none" aria-label="Projectiles" poster="assets/clips/projectile.jpg" src="assets/clips/projectile.mp4"></video></div>
+        <div><h3>Projectiles</h3><p>Each weapon has an associated <strong>projectile</strong>, therefore weapons vary in <strong>damage</strong> and <strong>bullet drop-off</strong>.</p></div>
+      </div>
+      <div class="feature">
+        <div class="media"><video class="clip" muted loop playsinline preload="none" aria-label="State design pattern code" poster="assets/clips/state-code.jpg" src="assets/clips/state-code.mp4"></video></div>
+        <div><h3>State Design Pattern</h3><p>The player character uses the <strong>state design pattern</strong> to <strong>encapsulate</strong> the behaviour associated with that state. This not only makes the PlayerCharacter class easier to read but also makes it easier to apply logic to a given state. Player states include:</p><ul><li><strong>Idle</strong></li><li><strong>Aiming</strong></li><li><strong>Fire</strong></li><li><strong>Reloading</strong></li><li><strong>Swapping</strong></li></ul></div>
+      </div>
+    </section>
+    <section class="section" id="ai">
+      <h2>AI</h2>
+      <div class="feature">
+        <div class="media"><video class="clip" muted loop playsinline preload="none" aria-label="AI" poster="assets/clips/ai.jpg" src="assets/clips/ai.mp4"></video></div>
+        <div><h3>Overview</h3><p>There is <strong>AI</strong> for <strong>zombies</strong>, <strong>dogs</strong> and <strong>turrets</strong>. Dogs and turrets can be purchased from the in-game shop. The zombie has its own AI controller, whereas the dog and turret share one. Each character with AI has an AIPerceptionComponent and <strong>only uses sight for perception</strong>.</p></div>
+      </div>
+      <div class="feature">
+        <div class="media"><img class="shot" src="assets/img/zombie-behaviour-tree.png" alt="Zombie behaviour tree" loading="lazy"></div>
+        <div><h3>Zombie: Behaviour Tree</h3><p>The zombies have a <strong>Behaviour Tree (BT)</strong>, where keys are set using the <strong>AI Controller</strong>. If the zombie has not seen the player, then they will move to ‘Grandad’ to kill him. However, if the player has purchased a front door from the shop, and the front door is closed, the zombie will destroy the front door before moving to the Grandad. If the player is in the zombie’s vision, the zombie will move to the player and attack. However, if the player leaves the zombie’s vision, it will move to where the player was last seen and then go back to hunting ‘Grandad’.</p></div>
+      </div>
+      <div class="feature">
+        <div class="media"><img class="shot" src="assets/img/zombie-ai-controller.png" alt="Zombie AI controller code" loading="lazy"></div>
+        <div><h3>Zombie: AI Controller</h3><p>This EnemyDetected function is bound to the <strong>OnTargetPerceptionUpdated</strong> <strong>delegate</strong>, therefore this code is executed whenever a player enters and exits the zombie’s sight. The ‘PlayerCharacter’ blackboard key is set and cleared, dependent on whether the player is successfully sensed.</p></div>
+      </div>
+      <div class="feature">
+        <div class="media"><img class="shot" src="assets/img/attack-player.png" alt="Attack player code" loading="lazy"></div>
+        <div><h3>Zombie: Attack Player</h3><p>For the Attack Player node in the BT, this is how the player is damaged. It casts the target (i.e. the character, door or ‘Grandad’) to the DamageableInterface, and then calls HandleDamage.</p></div>
+      </div>
+      <div class="feature">
+        <div class="media"><img class="shot" src="assets/img/dog-bt.png" alt="Dog behaviour tree" loading="lazy"></div>
+        <div><h3>Dog: Behaviour Tree</h3><p>If the dog cannot see a zombie, it will move to a random location nearby and wait. If it sees a zombie, it will <strong>search for the closest one using EQS</strong> and attack.</p></div>
+      </div>
+      <div class="feature">
+        <div class="media"><img class="shot" src="assets/img/turret-behaviour-tree.png" alt="Turret behaviour tree" loading="lazy"></div>
+        <div><h3>Turret: Behaviour Tree</h3><p>The turret BT uses the same <strong>EQS</strong> as the dog but it only has one branch under the Selector node, therefore if the turret doesn’t see anything it will do nothing.</p></div>
+      </div>
+      <div class="feature">
+        <div class="media"><img class="shot" src="assets/img/friendly-ai-controller.png" alt="Friendly AI controller code" loading="lazy"></div>
+        <div><h3>Friendly: AI Controller</h3><p>Both the <strong>dog and the turret use the same AI controller</strong>. Every time perception is updated a zombie is either added or removed from an array of zombies, and the ‘CanSeeZombies’ blackboard key is updated based on this.</p></div>
+      </div>
+      <div class="feature">
+        <div class="media"><img class="shot" src="assets/img/eqs-friendly.png" alt="Friendly EQS" loading="lazy"></div>
+        <div><h3>Friendly: EQS</h3><p>Unreal’s <strong>EQS</strong> is used to <strong>find the closest zombie</strong> out of the zombies in the dog or turret’s perception.</p></div>
+      </div>
+    </section>
+    <section class="section" id="dismemberment">
+      <h2>Dismemberment System</h2>
+      <div class="feature">
+        <div class="media"><video class="clip" muted loop playsinline preload="none" aria-label="Dismemberment" poster="assets/clips/dismemberment.jpg" src="assets/clips/dismemberment.mp4"></video></div>
+        <div><h3>Overview</h3><p>When shooting a zombie, you are able to <strong>remove their head, arms and legs</strong>.</p></div>
+      </div>
+      <div class="feature">
+        <div class="media"><video class="clip" muted loop playsinline preload="none" aria-label="Zombie collision boxes" poster="assets/clips/collision-boxes-zombie.jpg" src="assets/clips/collision-boxes-zombie.mp4"></video></div>
+        <div><h3>Collision Boxes</h3><p>Each body part has a collision box, and the <strong>OnComponentBeginOverlap</strong> <strong>delegate</strong> is bound to its respective function.</p></div>
+      </div>
+      <div class="feature">
+        <div class="media"><img class="shot" src="assets/img/handlebodypartoverlap-photo.png" alt="HandleBodyPartOverlap code" loading="lazy"></div>
+        <div><h3>Destroying Limbs</h3><p>The least computationally expensive way of destroying a zombie’s limbs that was found involved <strong>hiding the bone and spawning a blood Niagara System</strong> to create the effect. A design choice was made so that if a zombie loses one arm, it cannot lose the other - so it can attack the player at all times. Additionally, if a zombie loses one leg it will lose both and move into a crawling state.</p></div>
+      </div>
+    </section>
+    <section class="section" id="shop">
+      <h2>Shop System</h2>
+      <div class="feature">
+        <div class="media"><video class="clip" muted loop playsinline preload="none" aria-label="Shop" poster="assets/clips/shop.jpg" src="assets/clips/shop.mp4"></video></div>
+        <div><h3>Overview</h3><p>The character is able to access Grandad’s shop by moving to his location. Here you are able to <strong>buy a front door</strong> for the house (the zombies destroyed the last one!), <strong>weapon ammo</strong>, a <strong>turret</strong>, and even a <strong>dog</strong>!</p></div>
+      </div>
+      <div class="feature">
+        <div class="media"><img class="shot" src="assets/img/data-table-items.png" alt="Shop data table" loading="lazy"></div>
+        <div><h3>Data Table</h3><p>I made the design choice of using a <strong>data table</strong> to populate <strong>shop items</strong>.</p></div>
+      </div>
+      <div class="feature">
+        <div class="media"><img class="shot" src="assets/img/adding-shop-items.png" alt="Adding shop items code" loading="lazy"></div>
+        <div><h3>Adding Shop Items</h3><p>This code <strong>dynamically adds the shop items to the Uniform Grid</strong>, so they are displayed in the shop. This makes it much easier than placing the items in the UI manually.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <nav class="nav">
+      <a href="https://www.linkedin.com/in/JonathanBentham/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/jonathanbentham" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.youtube.com/@jonnb123" target="_blank" rel="noopener">YouTube</a>
+    </nav>
+    © Jonathan Bentham
+  </footer>
+
+  <script src="assets/site.js?v=3"></script>
+</body>
+</html>
