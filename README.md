@@ -1,5 +1,7 @@
 # Jonathan Bentham – Portfolio
 
+**Live site: https://jonathanbentham.github.io**
+
 Static portfolio site (plain HTML/CSS/JS), hosted on GitHub Pages.
 
 ## Structure
