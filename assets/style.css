@@ -383,3 +383,5 @@ a.tag:hover { background: var(--white); color: var(--navy); }
 
 /* Keep anchored section headings clear of the sticky header */
 section[id] { scroll-margin-top: 80px; }
+.code-link { display: inline-block; margin-top: 4px; color: var(--accent); font-weight: 600; font-size: 0.92rem; text-decoration: none; }
+.code-link:hover { color: var(--accent-hover); text-decoration: underline; }

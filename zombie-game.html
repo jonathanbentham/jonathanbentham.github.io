@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/style.css?v=4">
+  <link rel="stylesheet" href="assets/style.css?v=5">
 </head>
 <body>
   <header class="site-header">
@@ -48,38 +48,34 @@
       <div class="feature">
         <div class="media"><img class="shot" src="assets/img/defend-grandad.png" alt="Defend Grandad title screen" loading="lazy"></div>
         <div>
-          <h3>General Overview</h3>
-          <p>Defend Grandad is a solo project with a focus on programming gameplay features. Other than the 3D models, animations and sound effects, I am creating everything.</p>
+          <p>A <strong>round-based zombie FPS</strong> made solo in <strong>Unreal Engine 5</strong> and <strong>C++</strong>. Grandad can’t move, so you defend him from waves of zombies while exploring the map for weapons and perks.</p>
+          <p>Apart from the 3D models, animations and sound effects, <strong>I built everything</strong>.</p>
           <div class="facts">
-            <div><h3>Used Languages/IDEs</h3><div class="tags"><span class="tag">Unreal Engine 5</span><span class="tag">C++</span><span class="tag">Rider</span></div></div>
-            <div><h3>Timeframe</h3><div class="tags"><span class="tag">~2 years (Work in progress)</span></div></div>
+            <div><h3>Built with</h3><div class="tags"><span class="tag">Unreal Engine 5</span><span class="tag">C++</span><span class="tag">Blueprint</span><span class="tag">Rider</span></div></div>
+            <div><h3>Timeframe</h3><div class="tags"><span class="tag">2023 – 2024</span></div></div>
           </div>
         </div>
       </div>
-      <h3 style="text-align:center">Main Systems Overview</h3>
       <div class="tags" style="justify-content:center">
         <a class="tag" href="#code">Code Highlights</a>
         <a class="tag" href="#game-mode">Game Mode</a>
-        <a class="tag" href="#weapons">Weapon</a>
+        <a class="tag" href="#weapons">Weapons</a>
         <a class="tag" href="#ai">AI</a>
         <a class="tag" href="#dismemberment">Dismemberment</a>
         <a class="tag" href="#shop">Shop</a>
-        <span class="tag">Perk</span>
-        <span class="tag">UI</span>
-        <span class="tag">Animation</span>
       </div>
     </section>
     <section class="section" id="code">
       <h2>Code Highlights</h2>
       <p class="code-intro">The best places to start in the source code. Each link opens the file on GitHub at the relevant function.</p>
       <div class="code-grid">
-        <a class="code-card" href="https://github.com/jonathanbentham/ZombieProject/blob/main/Source/ZombieGame/Characters/Zombie/Zombie.cpp#L172" target="_blank" rel="noopener">
+        <a class="code-card" href="https://github.com/jonathanbentham/ZombieProject/blob/main/Source/ZombieGame/Characters/Zombie/Zombie.cpp#L96" target="_blank" rel="noopener">
           <h3>Dismemberment</h3>
-          <p class="code-file">Zombie.cpp · HandleBodyPartOverlap</p>
-          <p>Per-limb health, hiding bones and spawning Niagara effects instead of expensive mesh slicing. Losing a leg switches the zombie into a crawl.</p>
+          <p class="code-file">Zombie.cpp · OnBodyPartBeginOverlap</p>
+          <p>One overlap handler for every hit box, with per-limb health. Limbs are removed by hiding bones and spawning Niagara effects instead of expensive mesh slicing.</p>
           <span class="code-more">View code &rarr;</span>
         </a>
-        <a class="code-card" href="https://github.com/jonathanbentham/ZombieProject/blob/main/Source/ZombieGame/Characters/Zombie/AI/ZombieAIController.cpp#L43" target="_blank" rel="noopener">
+        <a class="code-card" href="https://github.com/jonathanbentham/ZombieProject/blob/main/Source/ZombieGame/Characters/Zombie/AI/ZombieAIController.cpp#L67" target="_blank" rel="noopener">
           <h3>Zombie AI</h3>
           <p class="code-file">ZombieAIController.cpp · EnemyDetected</p>
           <p>Event-driven targeting through AI Perception and the blackboard: chase the player, check their last known location, then go back to the door or Grandad.</p>
@@ -94,7 +90,7 @@
         <a class="code-card" href="https://github.com/jonathanbentham/ZombieProject/tree/main/Source/ZombieGame/Characters/PlayerCharacter/States" target="_blank" rel="noopener">
           <h3>Player state machine</h3>
           <p class="code-file">PlayerCharacter/States/</p>
-          <p>The state pattern for Idle, Aiming, Fire, Reloading and Swapping, keeping each state’s rules out of the character class.</p>
+          <p>The state pattern for Idle, Aiming, Fire, Reloading and Swapping. Each state owns its rules, and the character reuses one instance of each.</p>
           <span class="code-more">View code &rarr;</span>
         </a>
         <a class="code-card" href="https://github.com/jonathanbentham/ZombieProject/blob/main/Source/ZombieGame/GameMode/ZombieGameMode.cpp#L19" target="_blank" rel="noopener">
@@ -109,107 +105,63 @@
       <h2>Game Mode</h2>
       <div class="feature">
         <div class="media"><video class="clip" muted loop playsinline preload="none" aria-label="Game mode" poster="assets/clips/game-mode-zombie.jpg" src="assets/clips/game-mode-zombie.mp4"></video></div>
-        <div><h3>Overview</h3><p>The <strong>aim of the game is to defend ‘Grandad’</strong> - he is unable to move. Zombies will try and kill him by default. However (if seen), the zombies will move to the player and try to kill them. <strong>If the player or ‘Grandad’ die, the game ends</strong>. This is a round-based game, with increasing numbers of zombies spawning each round. If you beat the final round (currently set to round 10), you win!</p></div>
+        <div><h3>Defend Grandad</h3><p>Zombies head for Grandad by default, but switch to <strong>the player</strong> when they see them. Each wave sends more zombies. Survive the final wave to win; if you or Grandad die, it’s game over.</p></div>
       </div>
       <div class="feature">
         <div class="media"><video class="clip" muted loop playsinline preload="none" aria-label="Exploring houses" poster="assets/clips/explore-houses.jpg" src="assets/clips/explore-houses.mp4"></video></div>
-        <div><h3>Explore</h3><p>There are houses scattered around the map with <strong>player upgrades</strong> (perks) and <strong>weapons</strong>. The player must choose wisely when to travel, as if unattended for too long, ‘Grandad’ will be killed.</p></div>
-      </div>
-      <div class="feature">
-        <div class="media"><video class="clip" muted loop playsinline preload="none" aria-label="Collecting points" poster="assets/clips/collect-points.jpg" src="assets/clips/collect-points.mp4"></video></div>
-        <div><h3>Earn Points</h3><p>Shoot zombies to <strong>earn points</strong> to spend on <strong>weapons</strong>, <strong>perks</strong> or at the <strong>shop</strong>. Points are displayed in the bottom left of the screen.</p></div>
-      </div>
-      <div class="feature">
-        <div class="media"><video class="clip" muted loop playsinline preload="none" aria-label="Health regeneration" poster="assets/clips/health-regeneration.jpg" src="assets/clips/health-regeneration.mp4"></video></div>
-        <div><h3>Player Health</h3><p>If a player is damaged by a zombie, this will drain the health bar on the bottom right of the User Interface (UI). If this drains completely the player dies. Once the player has less than 50% health a flickering blood overlay will appear on the screen. A <strong>health regeneration timer</strong> <strong>delegate</strong> is bound to a function and called if the player takes any damage and is cleared once at full health.</p></div>
-      </div>
-      <div class="feature">
-        <div class="media"><img class="shot" src="assets/img/zombie-spawn.png" alt="Zombie spawn code" loading="lazy"></div>
-        <div><h3>Zombie Spawning</h3><p>In order to get the zombies to spawn on the surface, a <strong>sphere trace</strong> was used. This worked much better than using a line-trace as it scans a much larger area in the trace. A line trace was not a viable option as it would often spawn the zombies under the map.</p></div>
+        <div><h3>Explore and earn points</h3><p>Shooting zombies earns <strong>points</strong>: 100 for a headshot and 50 anywhere else. Spend them on weapons and <strong>perks</strong> in the houses around the map, or at Grandad’s shop. Leave Grandad alone for too long, though, and the zombies will get him.</p></div>
       </div>
       <div class="feature">
         <div class="media"><video class="clip" muted loop playsinline preload="none" aria-label="Boss zombies" poster="assets/clips/boss-zombies.jpg" src="assets/clips/boss-zombies.mp4"></video></div>
-        <div><h3>Boss Rounds</h3><p>There are <strong>fire-boss zombies</strong> that spawn once every five waves. These deal <strong>twice</strong> the amount of damage as regular zombies and use different sound effects. These will be improved in the future.</p></div>
+        <div><h3>Spawning and boss waves</h3><p>Zombies spawn on open ground using <strong>sphere sweeps</strong>, which find the landscape far more reliably than line traces. Every fifth wave is a <strong>boss wave</strong> of fire zombies that deal double damage.</p><a class="code-link" href="https://github.com/jonathanbentham/ZombieProject/blob/main/Source/ZombieGame/GameMode/ZombieGameMode.cpp#L19" target="_blank" rel="noopener">View code &rarr;</a></div>
       </div>
     </section>
     <section class="section" id="weapons">
-      <h2>Weapon System</h2>
+      <h2>Weapons</h2>
       <div class="feature">
         <div class="media"><video class="clip" muted loop playsinline preload="none" aria-label="Weapons" poster="assets/clips/weapons.jpg" src="assets/clips/weapons.mp4"></video></div>
-        <div><h3>Overview</h3><p>As it stands there are three weapons in the game:</p><ul><li>Pistol</li><li>Shotgun</li><li>Assault Rifle</li></ul></div>
+        <div><h3>Pistol, shotgun and assault rifle</h3><p>Each weapon fires its own <strong>projectile</strong>, so they differ in damage, fire rate and <strong>bullet drop</strong>. More weapons are found around the map, and you can swap between them.</p></div>
       </div>
       <div class="feature">
         <div class="media"><video class="clip" muted loop playsinline preload="none" aria-label="Projectiles" poster="assets/clips/projectile.jpg" src="assets/clips/projectile.mp4"></video></div>
-        <div><h3>Projectiles</h3><p>Each weapon has an associated <strong>projectile</strong>, therefore weapons vary in <strong>damage</strong> and <strong>bullet drop-off</strong>.</p></div>
-      </div>
-      <div class="feature">
-        <div class="media"><video class="clip" muted loop playsinline preload="none" aria-label="State design pattern code" poster="assets/clips/state-code.jpg" src="assets/clips/state-code.mp4"></video></div>
-        <div><h3>State Design Pattern</h3><p>The player character uses the <strong>state design pattern</strong> to <strong>encapsulate</strong> the behaviour associated with that state. This not only makes the PlayerCharacter class easier to read but also makes it easier to apply logic to a given state. Player states include:</p><ul><li><strong>Idle</strong></li><li><strong>Aiming</strong></li><li><strong>Fire</strong></li><li><strong>Reloading</strong></li><li><strong>Swapping</strong></li></ul></div>
+        <div><h3>Player state machine</h3><p>Idle, aiming, firing, reloading and swapping are each a <strong>state class</strong>, so rules like “no aiming mid-reload” live in one place instead of in the character.</p><a class="code-link" href="https://github.com/jonathanbentham/ZombieProject/tree/main/Source/ZombieGame/Characters/PlayerCharacter/States" target="_blank" rel="noopener">View code &rarr;</a></div>
       </div>
     </section>
     <section class="section" id="ai">
       <h2>AI</h2>
       <div class="feature">
         <div class="media"><video class="clip" muted loop playsinline preload="none" aria-label="AI" poster="assets/clips/ai.jpg" src="assets/clips/ai.mp4"></video></div>
-        <div><h3>Overview</h3><p>There is <strong>AI</strong> for <strong>zombies</strong>, <strong>dogs</strong> and <strong>turrets</strong>. Dogs and turrets can be purchased from the in-game shop. The zombie has its own AI controller, whereas the dog and turret share one. Each character with AI has an AIPerceptionComponent and <strong>only uses sight for perception</strong>.</p></div>
+        <div><h3>Zombies</h3><p>Zombies use <strong>AI Perception</strong> (sight). When they see the player they chase them; when they lose sight, they search the <strong>last known location</strong>, then go back to Grandad. If the player has bought a front door and it’s closed, they break it down first.</p><a class="code-link" href="https://github.com/jonathanbentham/ZombieProject/blob/main/Source/ZombieGame/Characters/Zombie/AI/ZombieAIController.cpp#L67" target="_blank" rel="noopener">View code &rarr;</a></div>
       </div>
       <div class="feature">
         <div class="media"><img class="shot" src="assets/img/zombie-behaviour-tree.png" alt="Zombie behaviour tree" loading="lazy"></div>
-        <div><h3>Zombie: Behaviour Tree</h3><p>The zombies have a <strong>Behaviour Tree (BT)</strong>, where keys are set using the <strong>AI Controller</strong>. If the zombie has not seen the player, then they will move to ‘Grandad’ to kill him. However, if the player has purchased a front door from the shop, and the front door is closed, the zombie will destroy the front door before moving to the Grandad. If the player is in the zombie’s vision, the zombie will move to the player and attack. However, if the player leaves the zombie’s vision, it will move to where the player was last seen and then go back to hunting ‘Grandad’.</p></div>
-      </div>
-      <div class="feature">
-        <div class="media"><img class="shot" src="assets/img/zombie-ai-controller.png" alt="Zombie AI controller code" loading="lazy"></div>
-        <div><h3>Zombie: AI Controller</h3><p>This EnemyDetected function is bound to the <strong>OnTargetPerceptionUpdated</strong> <strong>delegate</strong>, therefore this code is executed whenever a player enters and exits the zombie’s sight. The ‘PlayerCharacter’ blackboard key is set and cleared, dependent on whether the player is successfully sensed.</p></div>
-      </div>
-      <div class="feature">
-        <div class="media"><img class="shot" src="assets/img/attack-player.png" alt="Attack player code" loading="lazy"></div>
-        <div><h3>Zombie: Attack Player</h3><p>For the Attack Player node in the BT, this is how the player is damaged. It casts the target (i.e. the character, door or ‘Grandad’) to the DamageableInterface, and then calls HandleDamage.</p></div>
+        <div><h3>Zombie behaviour tree</h3><p>The AI controller reacts to perception events and sets <strong>blackboard keys</strong>, and the <strong>behaviour tree</strong> uses them to pick a target: the player, their last known location, the door or Grandad.</p></div>
       </div>
       <div class="feature">
         <div class="media"><img class="shot" src="assets/img/dog-bt.png" alt="Dog behaviour tree" loading="lazy"></div>
-        <div><h3>Dog: Behaviour Tree</h3><p>If the dog cannot see a zombie, it will move to a random location nearby and wait. If it sees a zombie, it will <strong>search for the closest one using EQS</strong> and attack.</p></div>
-      </div>
-      <div class="feature">
-        <div class="media"><img class="shot" src="assets/img/turret-behaviour-tree.png" alt="Turret behaviour tree" loading="lazy"></div>
-        <div><h3>Turret: Behaviour Tree</h3><p>The turret BT uses the same <strong>EQS</strong> as the dog but it only has one branch under the Selector node, therefore if the turret doesn’t see anything it will do nothing.</p></div>
-      </div>
-      <div class="feature">
-        <div class="media"><img class="shot" src="assets/img/friendly-ai-controller.png" alt="Friendly AI controller code" loading="lazy"></div>
-        <div><h3>Friendly: AI Controller</h3><p>Both the <strong>dog and the turret use the same AI controller</strong>. Every time perception is updated a zombie is either added or removed from an array of zombies, and the ‘CanSeeZombies’ blackboard key is updated based on this.</p></div>
-      </div>
-      <div class="feature">
-        <div class="media"><img class="shot" src="assets/img/eqs-friendly.png" alt="Friendly EQS" loading="lazy"></div>
-        <div><h3>Friendly: EQS</h3><p>Unreal’s <strong>EQS</strong> is used to <strong>find the closest zombie</strong> out of the zombies in the dog or turret’s perception.</p></div>
+        <div><h3>Dog and turret</h3><p>Both can be bought from the shop and share one AI controller. They use <strong>EQS</strong> to find the closest zombie they can see. The dog wanders nearby until it spots one; the turret stays put and fires.</p><a class="code-link" href="https://github.com/jonathanbentham/ZombieProject/blob/main/Source/ZombieGame/Characters/BTTask_FindClosestZombie.cpp#L16" target="_blank" rel="noopener">View code &rarr;</a></div>
       </div>
     </section>
     <section class="section" id="dismemberment">
-      <h2>Dismemberment System</h2>
+      <h2>Dismemberment</h2>
       <div class="feature">
         <div class="media"><video class="clip" muted loop playsinline preload="none" aria-label="Dismemberment" poster="assets/clips/dismemberment.jpg" src="assets/clips/dismemberment.mp4"></video></div>
-        <div><h3>Overview</h3><p>When shooting a zombie, you are able to <strong>remove their head, arms and legs</strong>.</p></div>
+        <div><h3>Heads, arms and legs</h3><p>Each limb has its own health. When it runs out, the bone is <strong>hidden</strong> and a <strong>Niagara blood effect</strong> plays, which is much cheaper than slicing the mesh. A zombie can only lose one arm, so it can always still attack, and losing its legs makes it <strong>crawl</strong>.</p><a class="code-link" href="https://github.com/jonathanbentham/ZombieProject/blob/main/Source/ZombieGame/Characters/Zombie/Zombie.cpp#L96" target="_blank" rel="noopener">View code &rarr;</a></div>
       </div>
       <div class="feature">
         <div class="media"><video class="clip" muted loop playsinline preload="none" aria-label="Zombie collision boxes" poster="assets/clips/collision-boxes-zombie.jpg" src="assets/clips/collision-boxes-zombie.mp4"></video></div>
-        <div><h3>Collision Boxes</h3><p>Each body part has a collision box, and the <strong>OnComponentBeginOverlap</strong> <strong>delegate</strong> is bound to its respective function.</p></div>
-      </div>
-      <div class="feature">
-        <div class="media"><img class="shot" src="assets/img/handlebodypartoverlap-photo.png" alt="HandleBodyPartOverlap code" loading="lazy"></div>
-        <div><h3>Destroying Limbs</h3><p>The least computationally expensive way of destroying a zombie’s limbs that was found involved <strong>hiding the bone and spawning a blood Niagara System</strong> to create the effect. A design choice was made so that if a zombie loses one arm, it cannot lose the other - so it can attack the player at all times. Additionally, if a zombie loses one leg it will lose both and move into a crawling state.</p></div>
+        <div><h3>Hit boxes</h3><p>Each body part has a <strong>collision box</strong> attached to its bone. They all share one overlap handler, which works out which part was hit.</p></div>
       </div>
     </section>
     <section class="section" id="shop">
-      <h2>Shop System</h2>
+      <h2>Shop</h2>
       <div class="feature">
         <div class="media"><video class="clip" muted loop playsinline preload="none" aria-label="Shop" poster="assets/clips/shop.jpg" src="assets/clips/shop.mp4"></video></div>
-        <div><h3>Overview</h3><p>The character is able to access Grandad’s shop by moving to his location. Here you are able to <strong>buy a front door</strong> for the house (the zombies destroyed the last one!), <strong>weapon ammo</strong>, a <strong>turret</strong>, and even a <strong>dog</strong>!</p></div>
+        <div><h3>Grandad’s shop</h3><p>Walk up to Grandad to open his shop and buy a <strong>front door</strong> for the house (the zombies destroyed the last one), <strong>ammo</strong>, a <strong>turret</strong> or even a <strong>dog</strong>.</p></div>
       </div>
       <div class="feature">
         <div class="media"><img class="shot" src="assets/img/data-table-items.png" alt="Shop data table" loading="lazy"></div>
-        <div><h3>Data Table</h3><p>I made the design choice of using a <strong>data table</strong> to populate <strong>shop items</strong>.</p></div>
-      </div>
-      <div class="feature">
-        <div class="media"><img class="shot" src="assets/img/adding-shop-items.png" alt="Adding shop items code" loading="lazy"></div>
-        <div><h3>Adding Shop Items</h3><p>This code <strong>dynamically adds the shop items to the Uniform Grid</strong>, so they are displayed in the shop. This makes it much easier than placing the items in the UI manually.</p></div>
+        <div><h3>Data-driven items</h3><p>Shop items are defined in a <strong>data table</strong>, and the shop widget builds its grid from it at runtime, instead of each item being placed in the UI by hand.</p><a class="code-link" href="https://github.com/jonathanbentham/ZombieProject/blob/main/Source/ZombieGame/Widgets/ShopWidget.cpp#L8" target="_blank" rel="noopener">View code &rarr;</a></div>
       </div>
     </section>
   </main>
