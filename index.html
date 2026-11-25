@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/style.css?v=3">
-  <link rel="stylesheet" href="assets/home.css?v=2">
+  <link rel="stylesheet" href="assets/home.css?v=3">
   <script>document.documentElement.classList.add('js');</script>
 </head>
 <body class="home">
@@ -37,7 +37,7 @@
 
   <!-- ===== Hero ===== -->
   <section class="hero-reel">
-    <video class="reel-bg" autoplay muted loop playsinline poster="assets/reel/mosaic.jpg?v=3" src="assets/reel/mosaic.mp4?v=3" aria-hidden="true"></video>
+    <video class="reel-bg" autoplay muted loop playsinline poster="assets/reel/mosaic.jpg?v=4" src="assets/reel/mosaic.mp4?v=4" aria-hidden="true"></video>
     <div class="reel-shade"></div>
     <div class="hero-content">
       <p class="eyebrow">Unreal Engine 5 · UK</p>
@@ -50,6 +50,7 @@
       </div>
     </div>
     <a class="scroll-cue" href="#shipped" aria-label="Scroll down"><span></span></a>
+    <p class="reel-credit">Includes footage from the TimeSplitters Rewind 2025 teaser (TS:R team)</p>
   </section>
 
   <!-- ===== Shipped strip ===== -->
@@ -111,8 +112,9 @@
 
     <div class="card-grid">
       <article class="card reveal">
-        <button class="card-media play" data-youtube="ZzWSrgQ3eMI" aria-label="Play TimeSplitters Rewind trailer">
+        <button class="card-media play hover-preview" data-youtube="ZzWSrgQ3eMI" aria-label="Play TimeSplitters Rewind trailer">
           <img src="assets/thumbs/timesplitters.jpg" alt="TimeSplitters Rewind trailer" loading="lazy">
+          <video muted loop playsinline preload="none" src="assets/clips/timesplitters-preview.mp4" aria-hidden="true"></video>
           <span class="play-icon" aria-hidden="true"></span>
         </button>
         <div class="card-body">
