@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/style.css?v=3">
+  <link rel="stylesheet" href="assets/style.css?v=4">
 </head>
 <body>
   <header class="site-header">
@@ -58,6 +58,7 @@
       </div>
       <h3 style="text-align:center">Main Systems Overview</h3>
       <div class="tags" style="justify-content:center">
+        <a class="tag" href="#code">Code Highlights</a>
         <a class="tag" href="#game-mode">Game Mode</a>
         <a class="tag" href="#weapons">Weapon</a>
         <a class="tag" href="#ai">AI</a>
@@ -66,6 +67,42 @@
         <span class="tag">Perk</span>
         <span class="tag">UI</span>
         <span class="tag">Animation</span>
+      </div>
+    </section>
+    <section class="section" id="code">
+      <h2>Code Highlights</h2>
+      <p class="code-intro">The best places to start in the source code. Each link opens the file on GitHub at the relevant function.</p>
+      <div class="code-grid">
+        <a class="code-card" href="https://github.com/jonathanbentham/ZombieProject/blob/main/Source/ZombieGame/Characters/Zombie/Zombie.cpp#L172" target="_blank" rel="noopener">
+          <h3>Dismemberment</h3>
+          <p class="code-file">Zombie.cpp · HandleBodyPartOverlap</p>
+          <p>Per-limb health, hiding bones and spawning Niagara effects instead of expensive mesh slicing. Losing a leg switches the zombie into a crawl.</p>
+          <span class="code-more">View code &rarr;</span>
+        </a>
+        <a class="code-card" href="https://github.com/jonathanbentham/ZombieProject/blob/main/Source/ZombieGame/Characters/Zombie/AI/ZombieAIController.cpp#L43" target="_blank" rel="noopener">
+          <h3>Zombie AI</h3>
+          <p class="code-file">ZombieAIController.cpp · EnemyDetected</p>
+          <p>Event-driven targeting through AI Perception and the blackboard: chase the player, check their last known location, then go back to the door or Grandad.</p>
+          <span class="code-more">View code &rarr;</span>
+        </a>
+        <a class="code-card" href="https://github.com/jonathanbentham/ZombieProject/blob/main/Source/ZombieGame/Characters/BTTask_FindClosestZombie.cpp#L16" target="_blank" rel="noopener">
+          <h3>Async EQS task</h3>
+          <p class="code-file">BTTask_FindClosestZombie.cpp</p>
+          <p>A latent behaviour tree task shared by the dog and turret. It runs an EQS query, finishes when the result comes back, and is instanced per AI.</p>
+          <span class="code-more">View code &rarr;</span>
+        </a>
+        <a class="code-card" href="https://github.com/jonathanbentham/ZombieProject/tree/main/Source/ZombieGame/Characters/PlayerCharacter/States" target="_blank" rel="noopener">
+          <h3>Player state machine</h3>
+          <p class="code-file">PlayerCharacter/States/</p>
+          <p>The state pattern for Idle, Aiming, Fire, Reloading and Swapping, keeping each state’s rules out of the character class.</p>
+          <span class="code-more">View code &rarr;</span>
+        </a>
+        <a class="code-card" href="https://github.com/jonathanbentham/ZombieProject/blob/main/Source/ZombieGame/GameMode/ZombieGameMode.cpp#L19" target="_blank" rel="noopener">
+          <h3>Wave spawning</h3>
+          <p class="code-file">ZombieGameMode.cpp · SpawnZombies</p>
+          <p>Wave scaling with boss rounds every fifth wave, and sphere-swept ground placement with a capped number of attempts, configurable in the editor.</p>
+          <span class="code-more">View code &rarr;</span>
+        </a>
       </div>
     </section>
     <section class="section" id="game-mode">
